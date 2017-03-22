@@ -1,0 +1,11 @@
+{
+  "name": "mean-restful",
+  "version": "1.0.0",
+  "description": "A complete mean application for a restful api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Collin Gordon",
+  "license": "ISC"
+}
