@@ -1,8 +1,8 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-var callbacks = require('../callbacks/callbacks');
-var Color = require('../models/colors');
+var express = require('express'),
+	mongoose = require('mongoose'),
+	bodyParser = require('body-parser'),
+	Color = require('../models/colors');
+
 var router = express.Router();
 
 // routes
@@ -28,8 +28,22 @@ router.post('/colors', function(req, res){
 	}); 
 });
 
-router.put('/colors/:id', function(req, res){
-	/*something*/
+router.put('/colors/:_id', function(req, res){
+	var id = req.params._id;
+	var color = req.body;
+	Color.updateColor(id, color,{}, function(err, color){
+		if(err){ throw err; }
+		res.json(color);
+	}); 
 });
+
+router.delete('/colors/:_id', function(req, res){
+	var id = req.params._id;
+	Color.deleteColor(id, function(err, color){
+		if(err){ throw err; }
+		res.json(color);
+	}); 
+});
+
 
 module.exports = router;

@@ -18,5 +18,17 @@ module.exports.addColor = function(color, callback){
 	Color.create(color, callback);
 }
 
+module.exports.updateColor = function(id, color, options, callback){
+	var query = {_id: id};
+	var update = {
+		name: color.name, 
+		color: color.color
+	};
 
+	Color.findOneAndUpdate(query, update, options, callback);
+}
 
+module.exports.deleteColor = function(id, callback){
+	var query = {_id: id};
+	Color.remove(query, callback);
+}

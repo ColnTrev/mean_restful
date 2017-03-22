@@ -4,6 +4,7 @@ var express = require('express'),
 	mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/mean_restful');
+
 // app start
 var app = express();
 var port = process.env.PORT || 3000;
