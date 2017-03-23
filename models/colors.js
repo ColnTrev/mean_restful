@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
+
 var colorSchema = new mongoose.Schema({
 	name:{ type: String, required: true },
 	color:{ type: String, default: "No preference"}
