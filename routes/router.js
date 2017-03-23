@@ -37,9 +37,9 @@ router.put('/colors/:_id', (req, res) => {
 	}); 
 });
 
-router.delete('/colors/:_id', function(req, res){
+router.delete('/colors/:_id', (req, res) => {
 	var id = req.params._id;
-	Color.deleteColor(id, function(err, color){
+	Color.deleteColor(id, (err, color) => {
 		if(err){ throw err; }
 		res.json(color);
 	}); 
